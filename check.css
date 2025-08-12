@@ -130,3 +130,41 @@ nav {
         padding-top: 50px;
     }
 }
+/* Hero section */
+.jojo {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Large screen: vertical center */
+@media (min-width: 769px) {
+    .jojo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .jojo {
+        position: static;
+        transform: none;
+        padding-top: 50px;
+    }
+}
+
