@@ -1,86 +1,132 @@
-*{
-    padding:0;
+* {
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-header{
+
+html {
+    font-size: 100%;
+}
+
+header {
     width: 100%;
-    height:120vh;
-    background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.2)), url(dddd.jpg );
-    background-size: cover;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.2)), 
+                url(dddd.jpg) center/cover no-repeat;
     font-family: sans-serif;
 }
-nav{
+
+/* Navigation */
+nav {
     width: 100%;
-    height: 100px;
+    min-height: 70px;
+    padding: 0 5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* mobile wrap */
 }
-.logp{
-    font-size: 2em;
+
+.logo {
+    font-size: clamp(1.5rem, 4vw, 2em);
     letter-spacing: 2px;
     color: black;
 }
-.menu a{
-    text-decoration: none;
-    color:black;
-    padding: 10px 20px;
-    position: relative;
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-.registor a{
-       text-decoration: none;
-    color:black;
-    padding: 10px 20px;
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 15px;
+    position: relative;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.register a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 15px;
     background: indianred;
     border-radius: 8px;
     transition: 0.4s;
-} 
-.registor a:hover{
+}
+
+.register a:hover {
     background: transparent;
     border: 1px solid indianred;
-
 }
-.jojo{
-    max-width: 650px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+
+/* Hero section */
+.jojo {
+    max-width: 90%;
+    margin: 0 auto;
     text-align: center;
     color: white;
+    padding: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.jojo span{
+
+.jojo span {
     letter-spacing: 5px;
+    display: block;
 }
-.jojo h1{
-    font-size: 2.5em;
+
+.jojo h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 20px;
 }
-.jojo a{
+
+.jojo a {
     text-decoration: none;
     background-color: indianred;
     color: white;
     padding: 10px 20px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     transition: 0.4s;
-
+    display: inline-block;
 }
-.menu a::before{
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 0%;
-height: 100%;
-border-bottom: 2px solid indianred;
-transition: 0.4s linear;
 
+.menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid indianred;
+    transition: 0.4s linear;
 }
-.menu a:hover::before{
+
+.menu a:hover::before {
     width: 90%;
 }
-.jojo a:hover{
+
+.jojo a:hover {
     background: transparent;
     border: 1px solid indianred;
+}
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .jojo {
+        top: auto;
+        transform: none;
+        padding-top: 50px;
+    }
 }
